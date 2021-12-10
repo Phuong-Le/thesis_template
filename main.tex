@@ -1,0 +1,37 @@
+\input{setup}
+
+\pagenumbering{roman}
+
+
+\begin{document}
+
+\input{decorations/titlepage}
+\input{decorations/titleback}
+\input{decorations/prologue}
+\input{decorations/acknowledgements}
+
+\newpage
+\huge
+\begin{center}
+    \vspace*{9cm}
+    \textbf{Main Contents}
+\end{center}
+
+\input{chapters/abstract}
+\newpage
+
+\normalsize
+
+{
+  \hypersetup{linkcolor=CadetBlue}
+  \tableofcontents
+}
+\newpage
+\label{glossary}
+\printglossary
+\newpage
+
+\pagenumbering{arabic}
+
+
+\end{document}
