@@ -5,10 +5,10 @@
 
 \begin{document}
 
-\input{decorations/titlepage}
-\input{decorations/titleback}
-\input{decorations/prologue}
-\input{decorations/acknowledgements}
+% \input{decorations/titlepage}
+% \input{decorations/titleback}
+% \input{decorations/prologue}
+% \input{decorations/acknowledgements}
 
 \newpage
 \huge
@@ -32,6 +32,20 @@
 \newpage
 
 \pagenumbering{arabic}
+
+\input{chapters/intro}  
+
+\part{Notes on representing the thesis}{The following chapters discuss tips to organise the documents, represent figures and tables}\label{part:codes} %edit this
+
+\input{chapters/structure}
+\input{chapters/floats}
+
+\part{Notes on writing styles}{}\label{part:writing}
+\input{chapters/writing}
+
+\bibliographystyle{geneticsstyle}
+\bibliography{references_extended}
+\addcontentsline{toc}{chapter}{Bibliography}
 
 
 \end{document}

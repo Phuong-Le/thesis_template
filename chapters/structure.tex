@@ -1,0 +1,36 @@
+\chapter{Structuring the document}
+
+If you wanted to write your own template from scratch, I would be very happy to refer you to \href{https://www.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_1)\%3A_Basic_Structure}{this Overleaf tutorial}. While I think it is very helpful, I must warn you that getting every detailed decoration the way you want can be quite tedious. 
+
+\section{The main organisation of this template}
+As per convention, the main file of this document is \texttt{main.tex}. The configurations (or preamble) for this template are in \texttt{setup.tex}, with detailed commented description. The title pages are in the \texttt{decorations} folder. The contents of each thesis chapter are in the \texttt{chapters} folder. The \texttt{figures} and \texttt{tables} folders, as the name suggest, contain figures and tables to include in your thesis. I suggest that you use the \texttt{graphics} folder to store the images, which can be ``called'' by files in \texttt{figures} as you write.
+
+\section{Naming your files and referencing}
+
+\subsection{Naming files}
+A small, but important thing to note when naming files, particularly those in \texttt{chapters}, \texttt{figures} and \texttt{tables}, you should NOT number them, \textit{e.g.} ``Chapter1'', ``Figure3''. Instead, give them descriptive names that you can easily recognise later, \textit{e.g.} ``\texttt{chapters/intro.tex}`` and ``\texttt{figures/.tex}''. % edit this
+This will save you time in case you change your mind about their orders later on - thesis writing takes weeks or more and you will never know what you might want to edit!
+
+\subsection{Cross-referencing}
+Cross-referencing is a very powerful \LaTeX tool that is particularly convenient in large documents such as a thesis. \href{https://www.overleaf.com/learn/latex/Cross_referencing_sections\%2C_equations_and_floats}{Here} is a tutorial for how you can do it. Briefly, if you want to refer to an element, \textit{e.g.} a chapter, a section or a figure, you could simply 
+
+\begin{enumerate}
+    \item use the \texttt{\symbol{92}label} command right after the element to label it.
+    \item refer to the element using the \texttt{\symbol{92}ref} command.
+\end{enumerate}
+
+For example, here I am able to reference Chapter \ref{intro} because the Introduction chapter was labelled. 
+
+To produce hyperlinked references, I used the package \texttt{hyperref}. The colours of different hyperlink types using the command \texttt{\symbol{92}hypersetup}.
+
+Cross-referencing is also useful if you have a glossary. Here, when I refer to the word \gls{mouse}, you can click on it to jump to its definition in my glossary. Note that you need to manually define the plural form in \texttt{glossary.tex} if you want to mention \glspl{mouse}, or you'll get ``mouses'' - I would like to blame the English language for the inconvenience. Again, \href{https://www.overleaf.com/learn/latex/Glossaries}{here} is a useful tutorial.
+
+\subsection{Citation style}
+
+This document uses the referencing style from the journal Genetics (\texttt{geneticsstyle.bst}). This is the standard style for thesis writing at the RSB, ANU. One of its strengths is that it trims down the bibliography if there are more than five authors. Here is an example of in-text referencing \citep{harris2020array} and in-text referencing with notes \citep[Note: NumPy is cool;][]{harris2020array}. An example of citation without the parentheses: \citet{harris2020array} introduced the python package NumPy. If you want to change the referencing style, please replace or delete the \texttt{geneticsstyle.bst} file. Both \href{https://www.overleaf.com/learn/latex/Natbib_bibliography_styles}{natbib} and \href{https://www.overleaf.com/learn/latex/Bibtex_bibliography_styles}{bibtex} provide a range of style options.  
+
+Here, the bibliography sources are stored in \texttt{references\_extended.bib}. For my thesis, I used \texttt{references\_extended.bib} as a place to store entries that I had to enter manually. I had a separate main bibliography file, \texttt{references.bib}, which was linked with \href{https://www.mendeley.com/?interaction_required=true}{Mendeley} as I find having a reference manager convenient.
+
+\section{Word counts in Overleaf}
+
+If you are using Overleaf, you will probably find \href{https://www.overleaf.com/learn/how-to/Is_there_a_way_to_run_a_word_count_that_doesn\%27t_include_LaTeX_commands\%3F}{this tutorial} useful for word counting as it allows you to selectively count/ignore some sections of the documents. Here I have placed \texttt{\%TC:ignore} before \texttt{\symbol{92}input\{glossary\}} in \texttt{setup.tex} for you.
