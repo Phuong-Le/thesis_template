@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper, twoside,]{report}
+
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \graphicspath{{graphics/}}
@@ -104,10 +104,10 @@
 {\titlerule*[0.5pc]{.}\contentspage}% 
 
 % glossary
-\usepackage[stylemods=longextra]{glossaries-extra}
+\usepackage[stylemods=longextra,automake]{glossaries-extra}
 \setglossarystyle{longragged3colheader}
 %TC:ignore
-\input{glossary}
+\input{glossary.tex}
 
 % These Commands create the label style for tables, figures and equations.
 \usepackage[labelfont={small,bf}, textfont=small]{caption}
