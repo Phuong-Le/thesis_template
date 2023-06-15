@@ -1,15 +1,16 @@
-\input{setup}
+\documentclass[12pt,a4paper, twoside,]{report}
+\input{setup.tex}
 
 \pagenumbering{roman}
 
 
 \begin{document}
 
-\input{decorations/titlepage}
-\input{decorations/titleback}
-\input{decorations/prologue}
-\input{decorations/declaration}
-\input{decorations/acknowledgements}
+\input{decorations/titlepage.tex}
+\input{decorations/titleback.tex}
+\input{decorations/prologue.tex}
+\input{decorations/declaration.tex}
+\input{decorations/acknowledgements.tex}
 
 \newpage
 \huge
@@ -34,20 +35,20 @@
 
 \pagenumbering{arabic}
 
-\input{chapters/intro}  
+\input{chapters/intro.tex}  
 
 \part{Notes on representing the thesis}{The following chapters discuss tips to organise the documents, represent figures and tables}\label{part:codes} %edit this
 
-\input{chapters/structure}
-\input{chapters/floats}
+\input{chapters/structure.tex}
+\input{chapters/floats.tex}
 
 \part{Notes on writing styles}{}\label{part:writing}
-\input{chapters/writing}
+\input{chapters/writing.tex}
 
 \bibliographystyle{geneticsstyle}
-\bibliography{references_extended}
+\bibliography{references_extended.bib}
 \addcontentsline{toc}{chapter}{Bibliography}
 
-\input{chapters/appendices}
+\input{chapters/appendices.tex}
 
 \end{document}

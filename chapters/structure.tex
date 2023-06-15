@@ -3,7 +3,7 @@
 If you wanted to write your own template from scratch, I would be very happy to refer you to \href{https://www.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_1)\%3A_Basic_Structure}{this Overleaf tutorial}. While I think it is very helpful, I must warn you that getting every detailed decoration the way you want can be quite tedious. 
 
 \section{The main organisation of this template}
-As per convention, the main file of this document is \texttt{main.tex}. The configurations (or preamble) for this template are in \texttt{setup.tex}, with detailed commented description. The title pages are in the \texttt{decorations} folder. The contents of each thesis chapter are in the \texttt{chapters} folder. The \texttt{figures} and \texttt{tables} folders, as the name suggest, contain figures and tables to include in your thesis. I suggest that you use the \texttt{graphics} folder to store the images, which can be ``called'' by files in \texttt{figures} as you write.
+As per convention, the main file of this document is \texttt{main.tex}. After you've compiled the code, a \texttt{main.pdf} document will appear, together with a bunch of "\texttt{main.$\ast$}" files - the pdf will be what you submit. The \texttt{thesis$\_$template.pdf} file gives you a demonstration of what the thesis \texttt{main.pdf} could look like.  The configurations (or preamble) for this template are in \texttt{setup.tex}, with detailed commented description. The title pages are in the \texttt{decorations} folder. The contents of each thesis chapter are in the \texttt{chapters} folder. The \texttt{figures} and \texttt{tables} folders, as the name suggest, contain figures and tables to include in your thesis. I suggest that you use the \texttt{graphics} folder to store the images, which can be ``called'' by files in \texttt{figures} as you write.
 
 \section{Naming your files and referencing}
 
@@ -29,8 +29,16 @@ Cross-referencing is also useful if you have a glossary. Here, when I refer to t
 
 This document uses the referencing style from the journal Genetics (\texttt{geneticsstyle.bst}). This is the standard style for thesis writing at the RSB, ANU. One of its strengths is that it trims down the bibliography if there are more than five authors. Here is an example of in-text referencing \citep{harris2020array} and in-text referencing with notes \citep[Note: NumPy is cool;][]{harris2020array}. An example of citation without the parentheses: \citet{harris2020array} introduced the python package NumPy. If you want to change the referencing style, please replace or delete the \texttt{geneticsstyle.bst} file. Both \href{https://www.overleaf.com/learn/latex/Natbib_bibliography_styles}{natbib} and \href{https://www.overleaf.com/learn/latex/Bibtex_bibliography_styles}{bibtex} provide a range of style options.  
 
-Here, the bibliography sources are stored in \texttt{references\_extended.bib}. For my thesis, I used \texttt{references\_extended.bib} as a place to store entries that I had to enter manually. I had a separate main bibliography file, \texttt{references.bib}, which was linked with \href{https://www.mendeley.com/?interaction_required=true}{Mendeley} as I find having a reference manager convenient.
+Here, the bibliography sources are stored in \texttt{references\_extended.bib}. For my thesis, I used \texttt{references\_extended.bib} as a place to store entries that I had to enter manually. I had a separate main bibliography file, \texttt{references.bib}, which can be exported from \href{https://www.mendeley.com/?interaction_required=true}{Mendeley} as I find having a reference manager convenient.
 
-\section{Word counts in Overleaf}
+\section{Word counts}
 
+\subsection*{Local machine}
+If you're using Latex on your local machine, you can use the following command to do the word count
+
+\begin{verbatim}
+    detex main.tex | wc -w
+\end{verbatim}
+
+\subsection*{Overleaf}
 If you are using Overleaf, you will probably find \href{https://www.overleaf.com/learn/how-to/Is_there_a_way_to_run_a_word_count_that_doesn\%27t_include_LaTeX_commands\%3F}{this tutorial} useful for word counting as it allows you to selectively count/ignore some sections of the documents. Here I have placed \texttt{\%TC:ignore} before \texttt{\symbol{92}input\{glossary\}} in \texttt{setup.tex} for you.
